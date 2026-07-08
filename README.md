@@ -15,7 +15,7 @@ git clone --depth=1 https://github.com/g5ostXa/darkmatter.git
 Initialize TUI:
 
 ```bash
-./init.sh
+cd darkmatter/ && go run ./cmd/darkmatter
 ```
 
 ### gHosTTP
