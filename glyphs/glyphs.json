@@ -1,0 +1,198 @@
+[
+  {
+    "name": "Arch Linux",
+    "icon": "󰣇"
+  },
+  {
+    "name": "Ghost",
+    "icon": ""
+  },
+  {
+    "name": "Digital Key",
+    "icon": "󰷖 "
+  },
+  {
+    "name": "Lightning",
+    "icon": "󰉁"
+  },
+  {
+    "name": "Code",
+    "icon": "󰗀 "
+  },
+  {
+    "name": "Secure",
+    "icon": "󰦝 "
+  },
+  {
+    "name": "Infinity",
+    "icon": "∞"
+  },
+  {
+    "name": "Heart",
+    "icon": "♡"
+  },
+  {
+    "name": "Checkmark",
+    "icon": "✓"
+  },
+  {
+    "name": "Crossmark",
+    "icon": "✕"
+  },
+  {
+    "name": "Ellipsis",
+    "icon": "⋯"
+  },
+  {
+    "name": "Vertical Ellipsis",
+    "icon": "⋮"
+  },
+  {
+    "name": "Arrow Up",
+    "icon": "↑"
+  },
+  {
+    "name": "Arrow Right",
+    "icon": "→"
+  },
+  {
+    "name": "Arrow Down",
+    "icon": "↓"
+  },
+  {
+    "name": "Arrow Left",
+    "icon": "←"
+  },
+  {
+    "name": "Arrow Top-Right",
+    "icon": "↗︎"
+  },
+  {
+    "name": "Arrow Bottom-Right",
+    "icon": "↘"
+  },
+  {
+    "name": "Arrow Bottom-Left",
+    "icon": "↙"
+  },
+  {
+    "name": "Arrow Top-Left",
+    "icon": "↖"
+  },
+  {
+    "name": "Arrow Counter-Clockwise",
+    "icon": "↺"
+  },
+  {
+    "name": "Arrow Clockwise",
+    "icon": "↻"
+  },
+  {
+    "name": "Bullet Filled",
+    "icon": "•"
+  },
+  {
+    "name": "Bullet Empty",
+    "icon": "◦"
+  },
+  {
+    "name": "Star Filled",
+    "icon": "★"
+  },
+  {
+    "name": "Star Empty",
+    "icon": "☆"
+  },
+  {
+    "name": "Star",
+    "icon": "✢"
+  },
+  {
+    "name": "Sparkle Filled",
+    "icon": "✦"
+  },
+  {
+    "name": "Sparkle Empty",
+    "icon": "✧"
+  },
+  {
+    "name": "Diamond",
+    "icon": "❖"
+  },
+  {
+    "name": "Asterisk",
+    "icon": "✱"
+  },
+  {
+    "name": "Flower",
+    "icon": "✿"
+  },
+  {
+    "name": "Sun",
+    "icon": "☼"
+  },
+  {
+    "name": "Snowflake",
+    "icon": "❄"
+  },
+  {
+    "name": "Moon",
+    "icon": "󰤄"
+  },
+  {
+    "name": "Star",
+    "icon": "⁜"
+  },
+  {
+    "name": "Circle Filled",
+    "icon": "●"
+  },
+  {
+    "name": "Circle Empty",
+    "icon": "○"
+  },
+  {
+    "name": "Copyright",
+    "icon": "©"
+  },
+  {
+    "name": "Trademark",
+    "icon": "®"
+  },
+  {
+    "name": "Horizontal Lines",
+    "icon": "☰"
+  },
+  {
+    "name": "Bitcoin",
+    "icon": "₿"
+  },
+  {
+    "name": "Diamond Filled",
+    "icon": "♦"
+  },
+  {
+    "name": "Diamond Empty",
+    "icon": "♢"
+  },
+  {
+    "name": "Yin-yang",
+    "icon": "☯"
+  },
+  {
+    "name": "Peace",
+    "icon": "☮"
+  },
+  {
+    "name": "Quote Close",
+    "icon": "❞"
+  },
+  {
+    "name": "Flag",
+    "icon": "⚐"
+  },
+  {
+    "name": "Hourglass",
+    "icon": "ⴵ"
+  }
+]
