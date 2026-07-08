@@ -5,17 +5,42 @@ Simple TUI application to run linux utilities with style.
 > - This is meant to run on Arch Linux.
 
 ### Installation
-Clone the repo:
+I recommend you download the latest release's binary and it's `sha256sum.txt` from \
+the [releases page](https://github.com/g5ostXa/darkmatter/releases), so you can verify your download.
 
+#### Using curl
+Get the binary and the sha256sum:
+```bash
+curl -L -O "https://github.com/g5ostXa/darkmatter/releases/download/v0.1.0/darkmatter-v0.1.0-linux-amd64"
+curl -L -O "https://github.com/g5ostXa/darkmatter/releases/download/v0.1.0/sha256sum.txt"
+```
+Verify your download:
+```bash
+sha256sum -c sha256sum.txt
+```
+
+Here's what the output should look like:
+```
+darkmatter-v0.1.0-linux-amd64: OK
+```
+
+#### Using git
+Get the full source (latest git)
 ```bash
 git clone --depth=1 https://github.com/g5ostXa/darkmatter.git
 ```
 
+You'll need to manually build the binary:
+```bash
+go build -o "darkmatter" ./cmd/darkmatter
+```
+
 ### Usage
 Initialize TUI:
+(Assuming the binrary was made executable)
 
 ```bash
-cd darkmatter/ && go run ./cmd/darkmatter
+./darkmatter-v0.1.0-linux-amd64
 ```
 
 ### gHosTTP
