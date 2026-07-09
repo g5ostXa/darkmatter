@@ -26,6 +26,7 @@ func main() {
 	core.ClearScreen()
 	header.Render()
 
+	time.Sleep(500 * time.Millisecond)
 	fmt.Println()
 
 	var choice string
