@@ -3,13 +3,6 @@ package styles
 import "charm.land/lipgloss/v2"
 
 var (
-// white     = lipgloss.Color("#FFFFFF")
-// darkWhite = lipgloss.Color("#A7A7A7")
-// green     = lipgloss.Color("#15E7CE")
-// purple = lipgloss.Color("#855EFB")
-)
-
-var (
 	HeaderStyle = lipgloss.NewStyle().
 			Bold(true).
 			Align(lipgloss.Center).
@@ -37,17 +30,3 @@ var (
 			Bold(false).
 			Foreground(lipgloss.Color("#A7A7A7"))
 )
-
-// HTTP service status style
-//var serviceServeStyle = lipgloss.NewStyle().
-//	Bold(true).
-//	Foreground((white))
-
-//var (
-//	TreeRootStyle = lipgloss.NewStyle().
-//			Bold(true).
-//			Foreground((white))
-
-//	TreeChildStyle = lipgloss.NewStyle().
-//			Bold(false).
-//			Foreground((purple))
