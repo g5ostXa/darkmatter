@@ -20,8 +20,8 @@ var (
 	serviceServeMsg = "→ Serving static files from"
 	serviceAddrMsg  = "→ Server is running at"
 
-	serviceServeDir = ".static ✓"
-	serviceAddrUrl  = "http://localhost:8080 ✓"
+	serviceServeDir = "./static/ and ./static/website"
+	serviceAddrUrl  = "http://localhost:8080 / 127.0.0.1:8080"
 )
 
 func makeServeTree() {
@@ -29,7 +29,7 @@ func makeServeTree() {
 	t := tree.Root(styles.TreeRootStyle.Render(serviceServeMsg)).
 		Child(
 			tree.New().
-				Root(styles.TreeChildStyle.Render(serviceServeDir)),
+				Root(styles.HttpChildStyle.Render(serviceServeDir)),
 		)
 	lipgloss.Println(t)
 }
@@ -39,7 +39,7 @@ func makeAddrTree() {
 	t := tree.Root(styles.TreeRootStyle.Render(serviceAddrMsg)).
 		Child(
 			tree.New().
-				Root(styles.TreeChildStyle.Render(serviceAddrUrl)),
+				Root(styles.HttpChildStyle.Render(serviceAddrUrl)),
 		)
 	lipgloss.Println(t)
 }
@@ -61,13 +61,13 @@ func Serve() {
 
 	go func() {
 
-		fmt.Println()
 		makeServeTree()
-
 		fmt.Println()
+
 		makeAddrTree()
-
 		fmt.Println()
+
+		lipgloss.Println(styles.LegendStyle.Render("[CTRL + C to stop server]"))
 
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 			core.TimeLogger.Fatal("Listen / Serve error...")
