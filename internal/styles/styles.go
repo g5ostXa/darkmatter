@@ -34,7 +34,7 @@ var (
 			Foreground(lipgloss.Color("#7b00ff"))
 
 	LegendStyle = lipgloss.NewStyle().
-			Bold(true).
+			Bold(false).
 			Foreground(lipgloss.Color("#A7A7A7"))
 )
 
