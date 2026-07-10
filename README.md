@@ -11,8 +11,8 @@ the [releases page](https://github.com/g5ostXa/darkmatter/releases), so you can 
 #### Using curl
 Get the binary and the sha256sum:
 ```bash
-curl -L -O "https://github.com/g5ostXa/darkmatter/releases/download/v0.1.1/darkmatter-v0.1.1-linux-amd64"
-curl -L -O "https://github.com/g5ostXa/darkmatter/releases/download/v0.1.1/sha256sum.txt"
+curl -L -O "https://github.com/g5ostXa/darkmatter/releases/download/v0.1.2/darkmatter-v0.1.2-linux-amd64"
+curl -L -O "https://github.com/g5ostXa/darkmatter/releases/download/v0.1.2/sha256sum.txt"
 ```
 Verify your download:
 ```bash
@@ -21,7 +21,7 @@ sha256sum -c sha256sum.txt
 
 Here's what the output should look like:
 ```
-darkmatter-v0.1.1-linux-amd64: OK
+darkmatter-v0.1.2-linux-amd64: OK
 ```
 
 #### Using git
@@ -40,7 +40,7 @@ Initialize TUI:
 (Assuming the binrary was made executable)
 
 ```bash
-./darkmatter-v0.1.1-linux-amd64
+./darkmatter-v0.1.2-linux-amd64
 ```
 
 ### gHosTTP
