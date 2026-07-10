@@ -19,7 +19,7 @@ jobs:
       - name: Get go version
         uses: actions/setup-go@v4
         with:
-          go-version: latest
+          go-version: stable
 
       - name: Build binaries
         run: |
