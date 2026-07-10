@@ -1,0 +1,35 @@
+name: Release CI
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build and Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get go version
+        uses: actions/setup-go@v4
+        with:
+          go-version: latest
+
+      - name: Build binaries
+        run: |
+          mkdir -p dist
+          VERSION=${GITHUB_REF#refs/tags/}
+          GOOS=linux GOARCH=amd64 go build -o dist/darkmatter-${VERSION}-linux-amd64 ./cmd/darkmatter
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: dist/*
+          draft: false
+          prerelease: false

@@ -66,7 +66,6 @@ func main() {
 			os.Exit(0)
 		}
 
-		// Pause briefly so the user can see the custom code output
 		fmt.Print("\nPress Enter to return to the menu...")
 		fmt.Scanln()
 
