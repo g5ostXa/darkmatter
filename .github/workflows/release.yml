@@ -26,12 +26,17 @@ jobs:
 
       - name: Build binaries
         run: |
-          mkdir -p dist
+          mkdir "-p" dist
           VERSION=${GITHUB_REF#refs/tags/}
-          GOOS=linux GOARCH=amd64 go build -o dist/darkmatter-${VERSION}-linux-amd64 ./cmd/darkmatter
+          GOOS=linux GOARCH=amd64 go build "-o" dist/darkmatter-${VERSION}-linux-amd64 ./cmd/darkmatter
+
+      - name: Generate sha256sum
+        run: |
+          cd dist
+          sha256sum * > sha256sums.txt
 
       - name: Create Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: dist/*
           draft: false
