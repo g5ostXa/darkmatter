@@ -33,7 +33,7 @@ jobs:
       - name: Generate sha256sum
         run: |
           cd dist
-          sha256sum * > sha256sums.txt
+          sha256sum * > sha256sum.txt
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
