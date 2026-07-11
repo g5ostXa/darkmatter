@@ -70,7 +70,7 @@ func Serve() {
 		lipgloss.Println(styles.LegendStyle.Render("[CTRL + C to stop server]"))
 
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
-			core.TimeLogger.Fatal("Listen / Serve error...")
+			core.TimeLogger.Fatal(":: Listen / Serve error...")
 		}
 	}()
 
@@ -79,10 +79,9 @@ func Serve() {
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 
-	// TODO: Add error message
 	if err := srv.Shutdown(ctx); err != nil {
-		core.TimeLogger.Fatal("")
+		core.TimeLogger.Fatal(":: Failed to terminate server...")
 	}
 
-	core.TimeLogger.Info("Server terminated successfully!")
+	core.TimeLogger.Info(":: Server terminated successfully!")
 }

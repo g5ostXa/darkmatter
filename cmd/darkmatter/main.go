@@ -19,8 +19,8 @@ import (
 func main() {
 
 	core.ClearScreen()
-	core.TimeLogger.Info("Initializing...")
 
+	core.TimeLogger.Info("Initializing...")
 	time.Sleep(2 * time.Second)
 
 	core.ClearScreen()
