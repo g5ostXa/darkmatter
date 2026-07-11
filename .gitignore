@@ -1,1 +1,3 @@
 static/website/*
+/bin/
+/dist/
