@@ -46,6 +46,10 @@ Initialize TUI:
 ### gHosTTP
 Deploy a simple HTTP server locally:
 
+> [!WARNING]
+> - This does not work with the binrary
+> - Please see [this issue](https://github.com/g5ostXa/darkmatter/issues/1) to learn more.
+
 - `static` directory is where static files should go.
 - In your browser, visit `http://localhost:8080/` to access the local server.
 - To close the server and go back to the main menu, press `CTRL + C`.
