@@ -8,7 +8,7 @@ import (
 
 var (
 	mainTitle     = "⋯ d󰣇rkm󰣇tter ⋯"
-	latestVersion = "v0.1.3"
+	latestVersion = "v0.1.4"
 )
 
 func makeTree() {
