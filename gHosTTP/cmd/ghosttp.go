@@ -9,6 +9,7 @@ import (
 	"syscall"
 	"time"
 
+	"charm.land/huh/v2"
 	"charm.land/lipgloss/v2"
 	"charm.land/lipgloss/v2/tree"
 	"github.com/g5ostXa/darkmatter/internal/core"
@@ -19,17 +20,15 @@ import (
 var (
 	serviceServeMsg = "→ Serving static files from"
 	serviceAddrMsg  = "→ Server is running at"
-
-	serviceServeDir = "./static/ and ./static/website"
 	serviceAddrUrl  = "http://localhost:8080 / 127.0.0.1:8080"
 )
 
-func makeServeTree() {
+func makeServeTree(path string) {
 
 	t := tree.Root(styles.TreeRootStyle.Render(serviceServeMsg)).
 		Child(
 			tree.New().
-				Root(styles.HttpChildStyle.Render(serviceServeDir)),
+				Root(styles.HttpChildStyle.Render(path)),
 		)
 	lipgloss.Println(t)
 }
@@ -44,9 +43,45 @@ func makeAddrTree() {
 	lipgloss.Println(t)
 }
 
+func getWebsitePath() (string, error) {
+
+	var dirPath string
+
+	form := huh.NewForm(
+		huh.NewGroup(
+			huh.NewInput().
+				Title("Enter website directory path").
+				Description("Provide the full path to your website files").
+				Placeholder("/home/user/my-website").
+				Value(&dirPath).
+				Validate(func(s string) error {
+					info, err := os.Stat(s)
+					if err != nil {
+						return fmt.Errorf("path does not exist: %v", err)
+					}
+					if !info.IsDir() {
+						return fmt.Errorf("path is not a directory")
+					}
+					return nil
+				}),
+		),
+	)
+
+	if err := form.Run(); err != nil {
+		return "", err
+	}
+
+	return dirPath, nil
+}
+
 func Serve() {
 
-	fs := http.FileServer(http.Dir("./static"))
+	dirPath, err := getWebsitePath()
+	if err != nil {
+		core.TimeLogger.Fatal("Failed to get directory path")
+	}
+
+	fs := http.FileServer(http.Dir(dirPath))
 
 	mux := http.NewServeMux()
 	mux.Handle("/", fs)
@@ -61,7 +96,7 @@ func Serve() {
 
 	go func() {
 
-		makeServeTree()
+		makeServeTree(dirPath)
 		fmt.Println()
 
 		makeAddrTree()
