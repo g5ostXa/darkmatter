@@ -66,7 +66,7 @@ Deploy a simple HTTP server locally:
 <br>
 
 ## getarch
-Quickly download latest archiso and it's signature
+Quickly download latest archiso and it's signature:
 
 - You can choose the mirror of your choice for better downloads.
 - See `getarch/main.go`:
