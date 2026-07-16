@@ -8,11 +8,11 @@ import (
 
 	"charm.land/huh/v2"
 	"charm.land/lipgloss/v2"
-	gHosTTP "github.com/g5ostXa/darkmatter/gHosTTP/cmd"
-	"github.com/g5ostXa/darkmatter/getarch"
-	"github.com/g5ostXa/darkmatter/glyphs"
-	"github.com/g5ostXa/darkmatter/header"
 	"github.com/g5ostXa/darkmatter/internal/core"
+	gHosTTP "github.com/g5ostXa/darkmatter/internal/gHosTTP/cmd"
+	"github.com/g5ostXa/darkmatter/internal/getarch"
+	"github.com/g5ostXa/darkmatter/internal/glyphs"
+	"github.com/g5ostXa/darkmatter/internal/header"
 	"github.com/g5ostXa/darkmatter/internal/styles"
 )
 
