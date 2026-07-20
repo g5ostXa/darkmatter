@@ -41,7 +41,7 @@ chmod +x darkmatter-v0.1.6-2-linux-amd64
 
 You can rename the binary to nake you life simpler:
 ```bash
-mv darkmatter-v0.1.6-2-linux-amd64  "new-name"
+mv darkmatter-v0.1.6-2-linux-amd64 "new-name"
 ```
 
 I recommend putting the binary anywhere on your `$PATH`, so you can run it \
