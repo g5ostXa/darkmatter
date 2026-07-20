@@ -10,8 +10,8 @@ the [releases page](https://github.com/g5ostXa/darkmatter/releases), so you can 
 
 #### Get the binary and the sha256sum using curl:
 ```bash
-curl -L -O "https://github.com/g5ostXa/darkmatter/releases/download/v0.1.6-1/darkmatter-v0.1.6-1-linux-amd64"
-curl -L -O "https://github.com/g5ostXa/darkmatter/releases/download/v0.1.6-1/sha256sum.txt"
+curl -L -O "https://github.com/g5ostXa/darkmatter/releases/download/v0.1.6-2/darkmatter-v0.1.6-2-linux-amd64"
+curl -L -O "https://github.com/g5ostXa/darkmatter/releases/download/v0.1.6-2/sha256sum.txt"
 ```
 Verify your download:
 ```bash
@@ -20,7 +20,7 @@ sha256sum -c sha256sum.txt
 
 Here's what the output should look like:
 ```
-darkmatter-v0.1.6-1-linux-amd64: OK
+darkmatter-v0.1.6-2-linux-amd64: OK
 ```
 
 #### Using git:
@@ -36,12 +36,12 @@ git clone --depth=1 https://github.com/g5ostXa/darkmatter.git
 
 First, make sure the binary is executable:
 ```bash
-chmod +x darkmatter-v0.1.6-1-linux-amd64
+chmod +x darkmatter-v0.1.6-2-linux-amd64
 ```
 
 You can rename the binary to nake you life simpler:
 ```bash
-mv darkmatter-v0.1.6-1-linux-amd64  "new-name"
+mv darkmatter-v0.1.6-2-linux-amd64  "new-name"
 ```
 
 I recommend putting the binary anywhere on your `$PATH`, so you can run it \
@@ -49,7 +49,7 @@ from anywhere just by typing the binary name.
 
 Otherwise, cd into the directory where you store the binary and run it:
 ```bash
-./darkmatter-v0.1.6-1-linux-amd64
+./darkmatter-v0.1.6-2-linux-amd64
 ```
 
 <br>
