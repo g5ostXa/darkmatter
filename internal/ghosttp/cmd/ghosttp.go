@@ -1,4 +1,4 @@
-package gHosTTP
+package ghosttp
 
 import (
 	"context"

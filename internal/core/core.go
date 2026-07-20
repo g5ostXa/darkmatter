@@ -22,9 +22,9 @@ var TimeLogger = log.NewWithOptions(os.Stderr, log.Options{
 
 func ClearScreen() {
 
-	cmd := exec.Command("clear")
+	clr := exec.Command("clear")
 
-	output, err := cmd.Output()
+	output, err := clr.Output()
 	if err != nil {
 		fmt.Print("\033[2J\033[H")
 	}

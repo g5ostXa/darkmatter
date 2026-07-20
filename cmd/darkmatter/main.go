@@ -8,13 +8,34 @@ import (
 
 	"charm.land/huh/v2"
 	"charm.land/lipgloss/v2"
+	"charm.land/lipgloss/v2/tree"
 	"github.com/g5ostXa/darkmatter/internal/core"
-	gHosTTP "github.com/g5ostXa/darkmatter/internal/gHosTTP/cmd"
 	"github.com/g5ostXa/darkmatter/internal/getarch"
+	ghosttp "github.com/g5ostXa/darkmatter/internal/ghosttp/cmd"
 	"github.com/g5ostXa/darkmatter/internal/glyphs"
-	"github.com/g5ostXa/darkmatter/internal/header"
 	"github.com/g5ostXa/darkmatter/internal/styles"
 )
+
+var (
+	mainTitle     = "⋯ d󰣇rkm󰣇tter ⋯"
+	latestVersion = "v0.1.6"
+)
+
+func makeTree() {
+
+	t := tree.Root(styles.TreeRootStyle.Render("○ Version")).
+		Child(
+			tree.New().
+				Root(styles.TreeChildStyle.Render(latestVersion)),
+		)
+	lipgloss.Println(t)
+}
+
+func RenderHeader() {
+
+	lipgloss.Println(styles.HeaderStyle.Render("", mainTitle, ""))
+	makeTree()
+}
 
 func main() {
 
@@ -24,7 +45,7 @@ func main() {
 	time.Sleep(2 * time.Second)
 
 	core.ClearScreen()
-	header.Render()
+	RenderHeader()
 
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println()
@@ -47,16 +68,14 @@ func main() {
 			),
 		)
 
-		// Run the form
 		err := form.Run()
 		if err != nil {
 			log.Fatalf("Error running form: %v", err)
 		}
 
-		// Handle user selection
 		switch choice {
 		case "opt1":
-			gHosTTP.Serve()
+			ghosttp.Serve()
 		case "opt2":
 			getarch.Latest()
 		case "opt3":
@@ -70,7 +89,7 @@ func main() {
 		fmt.Scanln()
 
 		core.ClearScreen()
-		header.Render()
+		RenderHeader()
 
 		fmt.Println()
 	}
