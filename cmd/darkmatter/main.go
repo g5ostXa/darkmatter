@@ -16,7 +16,7 @@ import (
 )
 
 var (
-	mainTitle = " d󰣇rkm󰣇tter "
+	mainTitle = "d󰣇rkmatter 󱡕"
 	version   = "dev"
 )
 
