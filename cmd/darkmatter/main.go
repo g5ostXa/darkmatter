@@ -16,7 +16,7 @@ import (
 )
 
 var (
-	mainTitle = "⋯ d󰣇rkm󰣇tter ⋯"
+	mainTitle = " d󰣇rkm󰣇tter "
 	version   = "dev"
 )
 
@@ -32,7 +32,7 @@ func makeTree() {
 
 func RenderHeader() {
 
-	lipgloss.Println(styles.HeaderStyle.Render("", mainTitle, ""))
+	lipgloss.Println(styles.HeaderStyle.Render("", mainTitle, ""))
 	makeTree()
 }
 
