@@ -1,0 +1,59 @@
+name: Release CI
+
+on:
+  push:
+    tags:
+      - "v*"
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build and Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: stable
+
+      - name: Read version file
+        id: get_version
+        run: |
+          VERSION=$(cat .version)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "tag=v$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Build binaries via Makefile
+        run: |
+          make build VERSION="${{ steps.get_version.outputs.version }}"
+
+      - name: Prepare release artifacts
+        run: |
+          mkdir -p dist
+          FULL_TAG="${{ steps.get_version.outputs.tag }}"
+          mv bin/darkmatter dist/darkmatter-${FULL_TAG}-linux-amd64
+
+      - name: Generate sha256sum
+        run: |
+          cd dist
+          sha256sum * > sha256sum.txt
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
