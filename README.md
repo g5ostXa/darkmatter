@@ -10,8 +10,8 @@ the [releases page](https://github.com/g5ostXa/darkmatter/releases), so you can 
 
 #### Using curl:
 ```bash
-curl -L -O "https://github.com/g5ostXa/darkmatter/releases/download/v0.1.0/darkmatter-v0.1.0-linux-amd64"
-curl -L -O "https://github.com/g5ostXa/darkmatter/releases/download/v0.1.0/sha256sum.txt"
+curl -L -O "https://github.com/g5ostXa/darkmatter/releases/download/v0.1.1/darkmatter-v0.1.1-linux-amd64"
+curl -L -O "https://github.com/g5ostXa/darkmatter/releases/download/v0.1.1/sha256sum.txt"
 ```
 Verify your download:
 ```bash
@@ -20,13 +20,13 @@ sha256sum -c sha256sum.txt
 
 Here's what the output should look like:
 ```
-darkmatter-v0.1.0-linux-amd64: OK
+darkmatter-v0.1.1-linux-amd64: OK
 ```
 
 Then, make sure the binary is located anywhere on your `$PATH` and make it executable. \
 In this example, we assume you have `$GOBIN` set to `~/go/bin`
 ```bash
-mv darkmatter-v0.1.0-linux-amd64 "$GOBIN/darkmatter"
+mv darkmatter-v0.1.1-linux-amd64 "$GOBIN/darkmatter"
 chmod +x "$GOBIN/darkmatter"
 ```
 
