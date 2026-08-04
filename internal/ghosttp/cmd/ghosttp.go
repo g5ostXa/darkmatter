@@ -78,7 +78,7 @@ func Serve() {
 
 	dirPath, err := getWebsitePath()
 	if err != nil {
-		logger.TimeLogger.Fatal("Failed to get directory path")
+		logger.TimeStamped.Fatal("Failed to get directory path")
 	}
 
 	fs := http.FileServer(http.Dir(dirPath))
@@ -105,7 +105,7 @@ func Serve() {
 		lipgloss.Println(styles.LegendStyle.Render("[CTRL + C to stop server]"))
 
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
-			logger.TimeLogger.Fatal(":: Listen / Serve error...")
+			logger.TimeStamped.Fatal(":: Listen / Serve error...")
 		}
 	}()
 
@@ -115,8 +115,8 @@ func Serve() {
 	defer cancel()
 
 	if err := srv.Shutdown(ctx); err != nil {
-		logger.TimeLogger.Fatal(":: Failed to terminate server...")
+		logger.TimeStamped.Fatal(":: Failed to terminate server...")
 	}
 
-	logger.TimeLogger.Info(":: Server terminated successfully!")
+	logger.TimeStamped.Info(":: Server terminated successfully!")
 }

@@ -8,12 +8,12 @@ import (
 )
 
 var (
-	Logger = log.NewWithOptions(os.Stderr, log.Options{
+	Standard = log.NewWithOptions(os.Stderr, log.Options{
 		ReportTimestamp: false,
 		Prefix:          ":",
 	})
 
-	TimeLogger = log.NewWithOptions(os.Stderr, log.Options{
+	TimeStamped = log.NewWithOptions(os.Stderr, log.Options{
 		ReportTimestamp: true,
 		Prefix:          ":",
 	})
@@ -24,12 +24,12 @@ func LogOutput(w io.Writer) {
 	if w == nil {
 		w = os.Stderr
 	}
-	Logger = log.NewWithOptions(os.Stderr, log.Options{
+	Standard = log.NewWithOptions(os.Stderr, log.Options{
 		ReportTimestamp: false,
 		Prefix:          ":",
 	})
 
-	TimeLogger = log.NewWithOptions(os.Stderr, log.Options{
+	TimeStamped = log.NewWithOptions(os.Stderr, log.Options{
 		ReportTimestamp: true,
 		Prefix:          ":",
 	})

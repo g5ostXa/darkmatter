@@ -48,7 +48,7 @@ func main() {
 	}
 
 	terminal.ClearScreen()
-	logger.TimeLogger.Info("Initializing...")
+	logger.TimeStamped.Info("Initializing...")
 
 	terminal.ClearScreen()
 	RenderHeader()

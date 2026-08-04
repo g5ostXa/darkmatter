@@ -39,7 +39,7 @@ func Menu() {
 		err := form.Run()
 
 		if err != nil {
-			logger.Logger.Fatalf("Error running form: %v", err)
+			logger.Standard.Fatalf("Error running form: %v", err)
 		}
 
 		switch choice {
