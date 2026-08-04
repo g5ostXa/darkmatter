@@ -82,9 +82,9 @@ Verify your download with `gpg`:
 ```bash
 # The name of the iso and the signsture will be different on your system
 gpg --verify archlinux.iso.sig archlinux.iso
- ```
+```
 
-You should get something like:
+ You should get something similar to the following:
 ```
 Good signature from Pierre Schmitz!
 ```
