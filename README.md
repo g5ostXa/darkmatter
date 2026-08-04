@@ -4,7 +4,7 @@ Simple TUI application to run linux utilities with style.
 > [!NOTE]
 > - This is meant to run on Arch Linux.
 
-## Installation and Usage
+## Installation
 I recommend you download the latest release's binary and it's `sha256sum.txt` from \
 the [releases page](https://github.com/g5ostXa/darkmatter/releases), so you can verify your download.
 
@@ -23,16 +23,11 @@ Here's what the output should look like:
 darkmatter-v0.1.0-linux-amd64: OK
 ```
 
-Then, put the binary anywhere on your `$PATH` and make it executable. \
+Then, make sure the binary is located anywhere on your `$PATH` and make it executable. \
 In this example, we assume you have `$GOBIN` set to `~/go/bin`
 ```bash
 mv darkmatter-v0.1.0-linux-amd64 "$GOBIN/darkmatter"
 chmod +x "$GOBIN/darkmatter"
-```
-
-You can now run the app from anywhere:
-```bash
-darkmatter
 ```
 
 #### Using git:
@@ -45,6 +40,22 @@ git clone --depth=1 https://github.com/g5ostXa/darkmatter.git
 Generate the binary using `make` (will be stored in `$GOBIN` or `$GOPATH` by default):
 ```bash
 cd darkmatter && make install
+```
+
+## Usage
+Print the current version:
+```bash
+darkmatter --version
+```
+
+Print help message for Makefile:
+```bash
+make help
+``` 
+
+Initialize TUI:
+```bash
+darkmatter
 ```
 
 <br>

@@ -1,8 +1,10 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"os"
+	"strings"
 
 	"charm.land/huh/v2"
 	"charm.land/lipgloss/v2"
@@ -37,6 +39,14 @@ func RenderHeader() {
 }
 
 func main() {
+
+	showVersion := flag.Bool("version", false, "print current version")
+
+	flag.Parse()
+	if *showVersion {
+		fmt.Println(mainTitle, strings.TrimSpace(version))
+		os.Exit(0)
+	}
 
 	core.ClearScreen()
 	core.TimeLogger.Info("Initializing...")
