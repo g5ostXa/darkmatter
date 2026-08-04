@@ -33,8 +33,6 @@ func RenderHeader() {
 
 	lipgloss.Println(styles.HeaderStyle.Render("", mainTitle, ""))
 	makeTree()
-
-	fmt.Println()
 }
 
 func main() {
