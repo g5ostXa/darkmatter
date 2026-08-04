@@ -12,7 +12,7 @@ import (
 	"charm.land/huh/v2"
 	"charm.land/lipgloss/v2"
 	"charm.land/lipgloss/v2/tree"
-	"github.com/g5ostXa/darkmatter/internal/core"
+	"github.com/g5ostXa/darkmatter/internal/logger"
 	"github.com/g5ostXa/darkmatter/internal/styles"
 )
 
@@ -78,7 +78,7 @@ func Serve() {
 
 	dirPath, err := getWebsitePath()
 	if err != nil {
-		core.TimeLogger.Fatal("Failed to get directory path")
+		logger.TimeLogger.Fatal("Failed to get directory path")
 	}
 
 	fs := http.FileServer(http.Dir(dirPath))
@@ -105,7 +105,7 @@ func Serve() {
 		lipgloss.Println(styles.LegendStyle.Render("[CTRL + C to stop server]"))
 
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
-			core.TimeLogger.Fatal(":: Listen / Serve error...")
+			logger.TimeLogger.Fatal(":: Listen / Serve error...")
 		}
 	}()
 
@@ -115,8 +115,8 @@ func Serve() {
 	defer cancel()
 
 	if err := srv.Shutdown(ctx); err != nil {
-		core.TimeLogger.Fatal(":: Failed to terminate server...")
+		logger.TimeLogger.Fatal(":: Failed to terminate server...")
 	}
 
-	core.TimeLogger.Info(":: Server terminated successfully!")
+	logger.TimeLogger.Info(":: Server terminated successfully!")
 }

@@ -4,22 +4,59 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/charmbracelet/log"
+	"charm.land/huh/v2"
+	"charm.land/lipgloss/v2"
+	"github.com/g5ostXa/darkmatter/internal/getarch"
+	ghosttp "github.com/g5ostXa/darkmatter/internal/ghosttp/cmd"
+	"github.com/g5ostXa/darkmatter/internal/glyphs"
+	"github.com/g5ostXa/darkmatter/internal/logger"
+	"github.com/g5ostXa/darkmatter/internal/password_generator"
+	"github.com/g5ostXa/darkmatter/internal/styles"
 )
 
-// Common logger
-var Logger = log.NewWithOptions(os.Stderr, log.Options{
-	ReportTimestamp: false,
-	Prefix:          ":",
-})
+func Menu() {
 
-// Time-stamped logger:
-var TimeLogger = log.NewWithOptions(os.Stderr, log.Options{
-	ReportTimestamp: true,
-	Prefix:          ":",
-})
+	fmt.Println()
+	var choice string
 
-func ClearScreen() {
+	for {
+		form := huh.NewForm(
+			huh.NewGroup(
+				huh.NewSelect[string]().
+					Title("Main Menu").
+					Description("Choose an option to execute, or exit the program.").
+					Options(
+						huh.NewOption("Initiate local HTTP server", "opt1"),
+						huh.NewOption("Get latest archiso and sig", "opt2"),
+						huh.NewOption("Glyphs menu", "opt3"),
+						huh.NewOption("Password generator", "opt4"),
+						huh.NewOption("Exit", "exit"),
+					).
+					Value(&choice),
+			),
+		)
 
-	fmt.Printf("\033[2J\033[H")
+		err := form.Run()
+
+		if err != nil {
+			logger.Logger.Fatalf("Error running form: %v", err)
+		}
+
+		switch choice {
+		case "opt1":
+			ghosttp.Serve()
+		case "opt2":
+			getarch.Latest()
+		case "opt3":
+			glyphs.Pager()
+		case "opt4":
+			password_generator.Gen()
+		case "exit":
+			lipgloss.Println(styles.CommonStyle.Render("\nExiting..."))
+			os.Exit(0)
+		}
+
+		fmt.Print("\nPress Enter to return to the menu...")
+		fmt.Scanln()
+	}
 }
